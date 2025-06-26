@@ -23,8 +23,6 @@ if api_key is None:
 if api_key is None:
     st.error("GROQ_API_KEY not found. Please set it in Streamlit secrets or .env file.")
     
-api_key = st.secrets["GROQ_API_KEY"]
-
 process_url_button = st.sidebar.button("Process URLs")
 if process_url_button:
     urls = [url for url in (url1, url2, url3) if url!='']
