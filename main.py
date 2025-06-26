@@ -4,6 +4,7 @@ sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 import os
 import streamlit as st
+from dotenv import load_dotenv 
 from rag import process_urls, generate_answer
 
 st.title("News Search Tool")
