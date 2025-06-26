@@ -28,11 +28,11 @@ llm = None
 vector_store = None                                                    # Placeholders for the language model and vector store.
 
 
-def initialize_components():                                           # Initializes: Groq’s Llama model, Hugging Face embedding model, Chroma vector database
+def initialize_components(api_key):                                           # Initializes: Groq’s Llama model, Hugging Face embedding model, Chroma vector database
     global llm, vector_store
 
     if llm is None:
-        llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.9, max_tokens=500)
+        llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.9, max_tokens=500, api_key=api_key)
 
     if vector_store is None:
         ef = HuggingFaceEmbeddings(
@@ -47,14 +47,14 @@ def initialize_components():                                           # Initial
         )
 
 
-def process_urls(urls):
+def process_urls(urls,api_key):
     """
     This function scraps data from a url and stores it in a vector db
     :param urls: input urls
     :return:
     """
     yield "Initializing Components...✅"
-    initialize_components()
+    initialize_components(api_key)
 
     yield "Resetting vector store...✅"                      # Clears the existing Chroma collection.
     vector_store.reset_collection()
