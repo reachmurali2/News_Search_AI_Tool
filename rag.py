@@ -22,7 +22,7 @@ CHUNK_SIZE = 1000                                                      # Max tok
 # CHUNK_OVERLAP = 20
 EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"             # Pre-trained embedding model
 VECTORSTORE_DIR = Path(__file__).parent / "resources/vectorstore"      # Path to store Chroma database
-COLLECTION_NAME = "News_Assistant"                                   # Name of the vector database collection
+COLLECTION_NAME = "News_Assistant"                                     # Name of the vector database collection
 
 llm = None
 vector_store = None                                                    # Placeholders for the language model and vector store.
@@ -40,10 +40,10 @@ def initialize_components():                                           # Initial
             model_kwargs={"trust_remote_code": True}                   # trust_remote_code=True allows the use of custom model loading logic (can be replaced with safer alternatives if needed).
         )
 
-        vector_store = Chroma(                                # Initializes a Chroma vector store object. This is where your embeddings and documents will be stored for retrieval.
-            collection_name=COLLECTION_NAME,                  # Names the collection (or namespace) inside the Chroma vector store. Each collection is like a table or bucket that can be queried separately.
-            embedding_function=ef,                            # Assigns the embedding model that will convert documents and queries into vector representations. In this case, ef is a Hugging Face embedding function.
-            persist_directory=str(VECTORSTORE_DIR)            # Specifies the path where Chroma will save the vector database to disk. This makes the vector store persistent across sessions (it will be saved locally).
+        vector_store = Chroma(                                         # Initializes a Chroma vector store object. This is where your embeddings and documents will be stored for retrieval.
+            collection_name=COLLECTION_NAME,                           # Names the collection (or namespace) inside the Chroma vector store. Each collection is like a table or bucket that can be queried separately.
+            embedding_function=ef,                                     # Assigns the embedding model that will convert documents and queries into vector representations. In this case, ef is a Hugging Face embedding function.
+            persist_directory=str(VECTORSTORE_DIR)                     # Specifies the path where Chroma will save the vector database to disk. This makes the vector store persistent across sessions (it will be saved locally).
         )
 
 
@@ -53,7 +53,7 @@ def process_urls(urls):
     :param urls: input urls
     :return:
     """
-    yield "Initializing Components"
+    yield "Initializing Components...✅"
     initialize_components()
 
     yield "Resetting vector store...✅"                      # Clears the existing Chroma collection.
