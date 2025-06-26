@@ -16,7 +16,9 @@ url3 = st.sidebar.text_input("URL 3")
 placeholder = st.empty()
 
 # Dual secret loading: Streamlit secrets or .env
+
 api_key = st.secrets.get("GROQ_API_KEY")
+
 if api_key is None:
     load_dotenv()
     api_key = os.getenv("GROQ_API_KEY")
