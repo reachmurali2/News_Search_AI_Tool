@@ -1,4 +1,3 @@
-# @Author: Dhaval Patel Copyrights Codebasics Inc. and LearnerX Pvt Ltd.
 import os
 from uuid import uuid4                                                 # Generates unique IDs for each document chunk.
 from dotenv import load_dotenv                                         # Loads environment variables (such as API keys) from a .env file.
