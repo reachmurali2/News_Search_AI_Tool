@@ -10,12 +10,13 @@ We are going to build a user-friendly news research tool designed for effortless
 - Interact with the LLM's (Llama3 via Groq) by inputting queries and receiving answers along with source URLs.
 
 '''
-✅ Summary
-This Streamlit app:
-Accepts news article URLs.
-Uses a RAG pipeline (likely with Groq LLM) to embed and index content.
-Lets users ask questions based on those articles.
-Returns contextual answers with source links.
+### ✅ Summary
+
+- This Streamlit app:
+- Accepts news article URLs.
+- Uses a RAG pipeline (likely with Groq LLM) to embed and index content.
+- Lets users ask questions based on those articles.
+- Returns contextual answers with source links.
 
 '''
 
