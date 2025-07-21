@@ -39,12 +39,3 @@ if query:
         placeholder.text("You must process urls first")
 
 
-'''
-✅ Summary
-This Streamlit app:
-Accepts news article URLs.
-Uses a RAG pipeline (likely with Groq LLM) to embed and index content.
-Lets users ask questions based on those articles.
-Returns contextual answers with source links.
-
-'''
