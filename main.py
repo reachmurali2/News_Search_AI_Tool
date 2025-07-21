@@ -36,6 +36,6 @@ if query:
             for source in sources.split("\n"):
                 st.write(source)
     except RuntimeError as e:                                        # Error Handling , If the user queries before URL processing is complete, shows a warning. You could also log the actual exception e for debugging.
-        placeholder.text("You must process urls first")
+        placeholder.text("You must process urls first") 
 
 
