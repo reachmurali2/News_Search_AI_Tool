@@ -89,7 +89,7 @@ def generate_answer(query):
     return result['answer'], sources
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":                                   # This line is a Python standard practice used to control the execution flow of your script.  It checks whether the script is being run directly or imported as a module in another script.
     urls = [
         "https://www.cnbc.com/2024/12/21/how-the-federal-reserves-rate-policy-affects-mortgages.html",
         "https://www.cnbc.com/2024/12/20/why-mortgage-rates-jumped-despite-fed-interest-rate-cut.html"
